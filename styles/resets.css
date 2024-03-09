@@ -1,0 +1,28 @@
+/* resets */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  }
+  
+  img {
+  display: block;
+  max-width: 100%;
+  }
+  
+  ul {
+  list-style: none;
+  }
+  
+  li {
+  list-style: none;
+  }
+  
+  a {
+  text-decoration: none;
+  }
+  
+  textarea {
+    resize: none;
+  }

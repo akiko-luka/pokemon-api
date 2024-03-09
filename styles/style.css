@@ -1,0 +1,118 @@
+:root {
+  --box-shadow: #00000038 0px 10px 20px, #00000048 0px 6px 6px;
+}
+
+body {
+  height: 100vh;
+  background-image: url("../pokemon-game-bg.jpg");
+  /* height: calc(100vh - 100px); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-family: sans-serif;
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+input[type="text"],
+button {
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+input[type="text"] {
+  border: 2px solid #f29503;
+  gap: 2rem;
+}
+
+input[type="text"]:focus {
+  border: 2px solid #f29503;
+}
+
+button {
+  background-color: #f29503;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: #fff;
+    color: #f29503;
+    outline: 2px solid#F29503;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: #ffffffaf;
+  box-shadow: var(--box-shadow);
+  height: 480px;
+  width: 300px;
+  padding: 20px;
+}
+
+h2 {
+  background-color: #ee1313a9;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.2rem 1.5rem;
+  margin-bottom: 1.1rem;
+  /* box-shadow: var(--box-shadow); */
+}
+
+img {
+  border: 3px solid #131010ad;
+  border-radius: 50%;
+  outline: 5px solid #f29603a2;
+  outline-offset: 5px;
+  margin: 1.3rem auto;
+  display: block;
+}
+
+h3 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.stat {
+  border: 1px solid green;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.stat-name {
+  font-weight: bold;
+  padding-right: 5px;
+  border: 1px solid orange;
+}
+
+.base-stat {
+  color: blue;
+  border: 1px solid red;
+  align-self: flex-end;
+  padding-left: 5px;
+  width: 27px;
+}
+
+.ability li {
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 3px;
+}
