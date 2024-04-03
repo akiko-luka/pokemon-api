@@ -7,33 +7,41 @@ const apiURL = `https://pokeapi.co/api/v2/pokemon/`;
 
 async function handleSubmit(event) {
   event.preventDefault();
-	const pokemonName = event.target.elements["pokemon-name"].value;
+  const pokemonName = event.target.elements["pokemon-name"].value;
 
-	const response = await fetch(apiURL + pokemonName)
-	const data = await response.json()
+  const response = await fetch(apiURL + pokemonName);
+  const data = await response.json();
 
-	console.log(data);
-	
+  console.log(data);
 
   const card = `
   <div class="card">
-    <h2>${data.name}</h2>
+  <article>
+    <h1 class="poke-name">${data.name}</h1>
+    </article>
     <img src="${data.sprites.front_default}">
+    
     <h3>Stats</h3>
     <ul class="stat">
       ${data.stats
-        .map((stat) => `<li><span class="stat-name">${stat.stat.name}:</span> <span class="base-stat">${stat.base_stat}</span></li>`)
+        .map(
+          (stat) => `<div class="stat-list">
+        <li class="stat-name">${stat.stat.name}:</li>
+        <p class="base-stat">${stat.base_stat}</p></div>`)
         .join("")}
     </ul>
+
     <h3>Abilities</h3>
     <ul class="ability">
-      ${data.abilities.map((ability) => `<li>${ability.ability.name}</li>`).join("")}
+      ${data.abilities
+        .map((ability) => `<li>${ability.ability.name}</li>`)
+        .join("")}
     </ul>
   </div>`;
-container.innerHTML = card;
-	
 
-  event.target.elements["pokemon-name"].value = '';
+  container.innerHTML = card;
+
+  event.target.elements["pokemon-name"].value = "";
 }
 
 form.addEventListener("submit", handleSubmit);
