@@ -7,7 +7,7 @@ const apiURL = `https://pokeapi.co/api/v2/pokemon/`;
 
 async function handleSubmit(event) {
   event.preventDefault();
-  const pokemonName = event.target.elements["pokemon-name"].value;
+  const pokemonName = event.target.elements["pokemon-name"].value.toLowerCase();
 
   const response = await fetch(apiURL + pokemonName);
   const data = await response.json();
